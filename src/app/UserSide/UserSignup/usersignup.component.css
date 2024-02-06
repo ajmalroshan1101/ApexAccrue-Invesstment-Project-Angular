@@ -1,0 +1,26 @@
+#clipp{
+    clip-path: polygon(28% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+#innerbox{
+    box-shadow: 12px 14px 20px  0;
+    overflow: hidden;
+
+}
+
+#clipp2{
+    clip-path: polygon(31% 0, 100% 0, 100% 100%, 0% 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#formbox{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+input{
+    color: black;
+}

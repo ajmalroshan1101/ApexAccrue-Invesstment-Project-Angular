@@ -1,0 +1,52 @@
+<body class="w-screen h-screen overflow-hidden bg-white flex">
+  <div class="w-3/5 h-screen bg-[#171720]  ml-[530px]" id="clipp">
+
+  </div>
+  <div class=" absolute w-3/4 h-5/6 bg bg-white z-50 left-40 top-12 flex " id="innerbox">
+
+    <div class="w-[390px] h-[530px] relative flex justify-center items-center">
+
+        <img src="../../../assets/Images/Logo.png" alt="" height="200px" width="200px" >
+
+    </div>
+    <div class=" w-[600px] h-[530px] bg-[#171720] " id="clipp2">
+
+        <form [formGroup]="FMbuilder" (ngSubmit)="SubmitForm()"  id="formbox">
+
+            <label for="FullName">Full name</label>
+
+            <input type="text" name="FullName" formControlName="FullName"  >
+
+            <label for="Email">Email</label>
+
+
+            <input type="text" name="Email"  formControlName="Email">
+
+            <label for="Password">Password</label>
+
+            <input type="password" name="Password" formControlName="Password" >
+    
+            <label for="spassword">Confirm Password</label>
+
+            <input type="password" name="spassword" formControlName="spassword" >
+
+
+            <small *ngIf="FMbuilder.get('Password')?.value!=FMbuilder.get('spassword')?.value 
+            && FMbuilder.get('spassword')?.touched" 
+             class="error-message">
+
+              Passwords do not match
+
+            </small>
+
+            <label for="Phone">Phone</label>
+
+            <input type="number" name="Phone" formControlName="Phone"  >
+
+            <button type="submit" value="submit" [disabled]="!FMbuilder.valid">submit</button>
+
+        </form>
+    </div>
+
+  </div>
+</body>
