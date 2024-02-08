@@ -1,53 +1,63 @@
 import { Component, OnInit } from "@angular/core";
-import {  FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { SignupPost } from "src/app/Interfaces/signupform";
 import { UserService } from "src/app/services/user.service";
 
 @Component({
-    selector:'app-usersignup',
-    templateUrl:'./usersignup.component.html',
-    styleUrls:['./usersignup.component.css']
+    selector: 'app-usersignup',
+    templateUrl: './usersignup.component.html',
+    styleUrls: ['./usersignup.component.css']
 })
 
-export class UserSignupComponent implements OnInit{
+export class UserSignupComponent implements OnInit {
 
-    FMbuilder!:FormGroup
+    FMbuilder!: FormGroup
 
-    constructor(private Serivce:UserService){}
+    constructor(private Serivce: UserService , private router:Router) { }
 
 
-ngOnInit(): void {
-    
-    this.FMbuilder = new FormGroup({
+    ngOnInit(): void {
 
-        FullName: new FormControl(null,[Validators.required]),
-        Email: new FormControl(null,[Validators.required,Validators.email]),
-        Password: new FormControl(null,[Validators.required,Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]),
-        spassword: new FormControl(null,Validators.required),
-        Phone: new FormControl(null,[Validators.required])
-    })
+        this.FMbuilder = new FormGroup({
 
-    
-}
-SubmitForm(){
+            FullName: new FormControl(null, [Validators.required]),
+            Email: new FormControl(null, [Validators.required, Validators.email]),
+            Password: new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]),
+            spassword: new FormControl(null, Validators.required),
+            Phone: new FormControl(null, [Validators.required])
+        })
 
-    const formdata = this.FMbuilder.value as SignupPost;
-    console.log('conmpon ent --')
-    console.log(
-        formdata
-    );
-    
-    this.Serivce.SignupPost(formdata).subscribe({
-        next: (data) => {
-            console.log(data);
-        },
-        error: (err) => {
-            console.log('err ========')
-            console.log(err);
-        }
-    })
-    
-}
+
+    }
+    SubmitForm() {
+
+        const formdata = this.FMbuilder.value as SignupPost;
+        console.log('conmpon ent --')
+        console.log(
+            formdata
+        );
+
+        this.Serivce.SignupPost(formdata).subscribe({
+            next: (data) => {
+                console.log(data);
+                if (data.otpsend) {
+
+                    this.router.navigate(['/otp']);
+
+                } else {
+                    
+                    console.log('venite illya');
+                    
+                }
+            },
+            error: (err) => {
+                console.log('err ========')
+                console.log(err);
+            }
+        })
+
+    }
 
 }
 
