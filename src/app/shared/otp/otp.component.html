@@ -1,1 +1,43 @@
+<div class="w-screen h-screen bg-[#171720] py-20 px-3">
+    <div class="container mx-auto">
+        <div class="max-w-sm mx-auto md:max-w-lg">
+            <div class="w-full">
+                <div class="bg-white h-64 py-3 rounded text-center">
+                    <h1 class="text-2xl font-bold">OTP Verification</h1>
+                    <div class="flex flex-col mt-4">
+                        <span>Enter the OTP you received at</span>
 
+                    </div>
+
+                    <div id="otp"  class="flex flex-col justify-center items-center text-center px-2 mt-5">
+                        <div class=" flex flex-nowrap justify-center items-start">
+                        <input class="m-2 border h-10 w-10 text-center form-control rounded" type="text" #otp1
+                            (input)="moveToNext(otp2)" [(ngModel)]="otp1val1" id="first" maxlength="1" />
+
+                        <input class="m-2 border h-10 w-10 text-center form-control rounded" type="text" #otp2
+                            (input)="moveToNext(otp3)" [(ngModel)]="otp1val2" id="second" maxlength="1" />
+
+                        <input class="m-2 border h-10 w-10 text-center form-control rounded" type="text" #otp3
+                            (input)="moveToNext(otp4)" [(ngModel)]="otp1val3" id="third" maxlength="1" />
+
+                        <input class="m-2 border h-10 w-10 text-center form-control rounded" type="text" #otp4
+                            (input)="moveToNext(otp5)" [(ngModel)]="otp1val4" id="fourth" maxlength="1" />
+
+                        <input class="m-2 border h-10 w-10 text-center form-control rounded" type="text" #otp5
+                            (input)="moveToNext(otp6)" [(ngModel)]="otp1val5" id="fifth" maxlength="1" />
+
+                        <input class="m-2 border h-10 w-10 text-center form-control rounded" type="text" #otp6
+                            [(ngModel)]="otp1val6"  id="sixth" maxlength="1" />
+
+                        </div>
+
+                        <div class="flex justify-center text-center mt-5 bg-[#171720] w-20 rounded p-3 text-white font-semibold">
+                            <button #sumbit (click)="Submitform()" class="flex items-center cursor-pointer" > Submit </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
