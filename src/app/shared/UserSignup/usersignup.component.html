@@ -16,20 +16,20 @@
 
             <label for="FullName">Full name</label>
 
-            <input type="text" name="FullName" formControlName="FullName"  >
+            <input type="text" name="FullName" formControlName="FullName" >
 
             <label for="Email">Email</label>
 
 
-            <input type="text" name="Email"  formControlName="Email">
+            <input type="text" name="Email"  formControlName="Email" >
 
             <label for="Password">Password</label>
 
-            <input type="password" name="Password" formControlName="Password" >
+            <input type="password" name="Password" formControlName="Password"  >
     
             <label for="spassword">Confirm Password</label>
 
-            <input type="password" name="spassword" formControlName="spassword" >
+            <input type="password" name="spassword" formControlName="spassword"  >
 
 
             <small *ngIf="FMbuilder.get('Password')?.value!=FMbuilder.get('spassword')?.value 

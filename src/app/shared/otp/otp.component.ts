@@ -1,7 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthguardService } from 'src/app/services/authguard.service';
 import { OtpNumberService } from 'src/app/services/otpnumber.service';
+import { TokenInterceptorService } from 'src/app/services/token-interceptor.service';
 import { UserService } from 'src/app/services/user.service';
+import { UsertokenService } from 'src/app/services/usertoken.service';
 
 @Component({
   selector: 'app-otp',
@@ -12,7 +15,8 @@ export class OtpComponent implements OnInit {
   constructor(
     private UserService: UserService,
     private OtpNumberService: OtpNumberService,
-    private router:Router
+    private router: Router,
+    private usertoken: UsertokenService   
   ) {}
 
   @ViewChild('otp1') otp1!: ElementRef<HTMLInputElement>;
@@ -53,31 +57,35 @@ export class OtpComponent implements OnInit {
       this.otp1val5 +
       this.otp1val6;
 
-      console.log(this.PhoneNumber);
-      
+    console.log(this.PhoneNumber);
 
     const otpnum = parseInt(otp);
 
-    this.UserService.OTPVerification(otpnum,this.PhoneNumber).subscribe({
+    this.UserService.OTPVerification(otpnum, this.PhoneNumber).subscribe({
       next: (data) => {
         console.log(data);
 
-        if(data.otpCheck){
+        if (data.otpCheck && data.token) {
 
+          this.usertoken.setToken(data.token);
+
+          this.usertoken.storeuser(data.userType)
+
+          console.log(this.usertoken.getuser());
+          
           this.router.navigate(['/user/userhome']);
 
-        }else{
+        } else {
 
           console.log('hello bhaya');
-          
         }
-        
-      //  if(data.otpCheck){
 
-      //  }else{
-        
-      //  }
-      }
+        //  if(data.otpCheck){
+
+        //  }else{
+
+        //  }
+      },
     });
   }
 }

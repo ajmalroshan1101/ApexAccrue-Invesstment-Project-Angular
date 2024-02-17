@@ -36,7 +36,6 @@ export class UserSignupComponent implements OnInit {
   SubmitForm() {
     const formdata = this.FMbuilder.value as SignupPost;
 
-    
     // this.sendphone.receivephonenum(formdata);
     this.OtpNumberService.phonenumbers$.next(formdata.Phone);
 
