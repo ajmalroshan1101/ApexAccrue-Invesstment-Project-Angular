@@ -1,55 +1,115 @@
 <!-- src/app/apex-accrue/apex-accrue.component.html -->
 
-<header class="bg-blue-500 text-white py-4">
-    <div class="container mx-auto flex justify-between items-center">
-        <div class="flex items-center">
-            <!-- Replace 'your-logo.png' with your actual logo file -->
-            <img src="your-logo.png" alt="Logo" class="h-8 w-8 mr-2">
-            <span class="text-xl font-bold">ApexAccrue</span>
-        </div>
-        <nav>
-            <a href="#" class="mx-2">Client</a>
-            <a href="#" class="mx-2">Company</a>
-            <a href="#" class="mx-2">About</a>
-            <a href="#" class="mx-2">Login</a>
-        </nav>
+<header class="bg-blue-500 text-white p-4 fixed w-screen top-0">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="flex items-center">
+      <!-- Replace 'your-logo.png' with your actual logo file -->
+      <img
+        src="../../../assets/Images/Logo.png"
+        alt="Logo"
+        class="h-12 w-12 mr-2"
+      />
+      <span class="text-xl font-bold">ApexAccrue</span>
     </div>
+    <nav>
+      <a (click)="scrollToSection('Client')" class="mx-2">Client</a>
+      <a (click)="scrollToSection('Company')" class="mx-2">Company</a>
+      <a href="#" class="mx-2">About</a>
+      <a href="#" class="mx-2">Login</a>
+    </nav>
+  </div>
 </header>
+<div class="w-screen h-40">
 
-<div class="container mt-8 ">
-    <!-- Client Section -->
-    <section class="mb-12 mx-40 flex flex-col items-center">
-        <h2 class="text-2xl font-bold mb-4">For Clients</h2>
-        <p class="ttext-gray-700 mb-4 whitespace-normal ">
-            Explore investment opportunities with ApexAccrue. Invest your cash in plans offered by registered companies on our platform. Choose from a variety of investment plans tailored to meet your financial goals. Enjoy the flexibility of selecting the duration of your investment, with a minimum withdrawal period for your convenience.
-        </p>
-        <p class="text-gray-700 mb-4">
-            Engage directly with the companies you've invested in through our chat feature. Stay informed about your investments and receive updates on your portfolio. Additionally, access educational classes related to investments provided by the website to enhance your financial knowledge.
-        </p>
-        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full inline-block">Signup / Get Started</a>
-    </section>
+</div>
+<div  class="container ">
+  <!-- Client Section -->
+  <section class="mb-12 mx-40 flex flex-col items-center">
+    <h2 class="text-2xl font-bold mb-4">For Clients</h2>
+    <p  id="Client" class="text-gray-700 mb-4 whitespace-normal">
+      "Investors play a crucial role in shaping the financial landscape, and
+      cash investment serves as a powerful tool for wealth accumulation. The
+      advantages of cash investment are manifold, offering investors the
+      potential for steady returns, liquidity, and flexibility. By strategically
+      diversifying their portfolio through cash investments, investors can
+      mitigate risks and secure a stable financial future. In an ever-changing
+      economic landscape, cash investments provide a reliable cushion against
+      market fluctuations. Looking ahead, the future of cash investment appears
+      promising, with evolving financial instruments and technology-driven
+      platforms making it easier for investors to access and manage their
+      investments. Moreover, recognizing the significance of savings is integral
+      to financial well-being. Savings not only serve as a foundation for future
+      investments but also act as a safety net during unexpected financial
+      challenges. Understanding the importance of balancing investments and
+      savings is key to achieving long-term financial security and realizing
+      one's financial goals."
+    </p>
 
-    <!-- Company Section remains unchanged -->
+    <p class="text-gray-700 mb-4 whitespace-normal">
+      Explore investment opportunities with ApexAccrue. Invest your cash in
+      plans offered by registered companies on our platform. Choose from a
+      variety of investment plans tailored to meet your financial goals. Enjoy
+      the flexibility of selecting the duration of your investment, with a
+      minimum withdrawal period for your convenience.
+    </p>
+    <p class="text-gray-700 mb-4">
+      Engage directly with the companies you've invested in through our chat
+      feature. Stay informed about your investments and receive updates on your
+      portfolio. Additionally, access educational classes related to investments
+      provided by the website to enhance your financial knowledge.
+    </p>
+    <a
+      href="#" routerLink="/usersignup"
+      class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full inline-block"
+      >Get Started</a
+    >
+  </section>
 
+  <!-- Company Section remains unchanged -->
 
-    <!-- Company Section -->
-    <section class="mb-12 mx-40 flex flex-col items-center">
-        <h2 class="text-2xl font-bold mb-4">For Companies</h2>
-        <p class="text-gray-700 mb-4 whitespace-normal">
-            Showcase your investment plans on ApexAccrue. Register your company, submit your investment plans for approval, and connect with potential investors. Upload posts and events to keep the investor community informed about your activities.
-        </p>
-        <p class="text-gray-700 mb-4 whitespace-normal">
-            ApexAccrue takes fraud prevention seriously. Companies engaging in fraudulent activities will face legal consequences. Investors have the power to report companies, and if too many reports are received, the company will be terminated from the website with possible legal actions.
-        </p>
-        <p class="text-gray-700 mb-4 whitespace-normal">
-            By registering, you agree to the terms and conditions of the website. If you are interested and accept these terms, you can start the registration process by clicking the "Get Started" button.
-        </p>
-        <a href="#" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full inline-block">Get Started</a>
-    </section>
+  <!-- Company Section -->
+  <section id="Company" class="mb-12 mx-40 flex flex-col items-center">
+    <h2 class="text-2xl font-bold mb-4">For Companies</h2>
+    <p class="text-gray-700 mb-4 whitespace-normal">
+      As companies embark on the journey of registering on our platform, they
+      open doors to a realm of unprecedented opportunities. The potential for
+      profit is substantial, with our platform providing a dynamic space to
+      showcase investment plans, engage with a diverse investor community, and
+      foster growth. By registering, companies position themselves for future
+      turnovers and financial success. The platform serves as a catalyst for
+      growth, enabling businesses to connect with a broad spectrum of investors,
+      present their unique offerings, and establish a solid foundation for
+      long-term prosperity. With a commitment to supporting and promoting
+      legitimate ventures, our platform aims to become the launchpad for
+      companies seeking sustainable growth and financial excellence
+    </p>
+    <p class="text-gray-700 mb-4 whitespace-normal">
+      Showcase your investment plans on ApexAccrue. Register your company,
+      submit your investment plans for approval, and connect with potential
+      investors. Upload posts and events to keep the investor community informed
+      about your activities.
+    </p>
+    <p class="text-gray-700 mb-4 whitespace-normal">
+      ApexAccrue takes fraud prevention seriously. Companies engaging in
+      fraudulent activities will face legal consequences. Investors have the
+      power to report companies, and if too many reports are received, the
+      company will be terminated from the website with possible legal actions.
+    </p>
+    <p class="text-gray-700 mb-4 whitespace-normal">
+      By registering, you agree to the terms and conditions of the website. If
+      you are interested and accept these terms, you can start the registration
+      process by clicking the "Get Started" button.
+    </p>
+    <a
+      href="#"
+      class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full inline-block"
+      >Get Started</a
+    >
+  </section>
 </div>
 
 <footer class="bg-gray-800 text-white py-4">
-    <div class="container mx-auto text-center">
-        <p>Contact us: example@email.com | Phone: (123) 456-7890</p>
-    </div>
+  <div class="container mx-auto text-center">
+    <p>Contact us: example@email.com | Phone: (123) 456-7890</p>
+  </div>
 </footer>

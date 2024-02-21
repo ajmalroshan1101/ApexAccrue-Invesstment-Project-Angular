@@ -28,7 +28,7 @@ export class AuthGuard implements CanActivate {
     const userType = this.userToken.getuser();
     console.log(userType);console.log('authguard');
     
-    
+    //This condition is to check the usertype and select the path 
     if (this.userToken.isAuthenticated()) {
       switch (userType) {
         case 'user':

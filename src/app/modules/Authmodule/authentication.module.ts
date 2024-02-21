@@ -1,13 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthRoutingModule } from 'src/app/Routes/Authroute/auth-routing.module';
-import { UserSignupComponent } from 'src/app/shared/UserSignup/usersignup.component';
 import { UserService } from 'src/app/services/user.service';
+import { UserSignupComponent } from 'src/app/shared/UserSignup/usersignup.component';
+import { CommonloginComponent } from 'src/app/shared/commonlogin/commonlogin.component';
 
 @NgModule({
-  declarations: [UserSignupComponent],
-  imports: [ReactiveFormsModule, CommonModule, AuthRoutingModule],
+  declarations: [UserSignupComponent, CommonloginComponent],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    AuthRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
   providers: [UserService],
   exports: [],
 })

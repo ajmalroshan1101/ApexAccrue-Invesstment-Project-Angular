@@ -11,6 +11,7 @@ import { OtpNumberService } from './services/otpnumber.service';
 import { AuthGuard } from './guards/auth.guard';
 import { HomepageComponent } from './shared/homepage/homepage.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { CommonloginComponent } from './shared/commonlogin/commonlogin.component';
 
 @NgModule({
   declarations: [AppComponent, OtpComponent, HomepageComponent],

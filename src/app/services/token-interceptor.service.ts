@@ -1,8 +1,6 @@
 // import { Injectable } from '@angular/core';
 // import { jwtDecode } from 'jwt-decode';
 
-
-
 // @Injectable({
 //   providedIn: 'root'
 // })
@@ -22,12 +20,11 @@ import {
 import { Observable } from 'rxjs';
 import { UsertokenService } from './usertoken.service';
 
-
 @Injectable({
   providedIn: 'root',
 })
 export class TokenInterceptorService implements HttpInterceptor {
-  constructor(private usertoken:UsertokenService) {}
+  constructor(private usertoken: UsertokenService) {}
 
   intercept(
     request: HttpRequest<any>,
@@ -35,7 +32,6 @@ export class TokenInterceptorService implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     // Check if the user is authenticated (you may have your own logic here)
     if (this.usertoken.isAuthenticated()) {
-
       // Get the user's token from your UserService
       const userToken = this.usertoken.gettoken();
 

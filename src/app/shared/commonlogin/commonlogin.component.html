@@ -1,0 +1,93 @@
+<!-- login.component.html -->
+<!-- login.component.html -->
+
+<body
+  class="relative w-screen h-screen overflow-hidden bg-[#171720] flex justify-center items-center"
+>
+  <div class="absolute w-3/5 h-screen bg-[#171720] ml-[45%]" id="clipp"></div>
+
+  <div
+    class="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 h-5/6 bg-white z-50 sm:left-0 left-12 flex flex-col items-center justify-between rounded-md"
+    id="innerbox"
+  >
+    <div
+      class="w-1/2 md:w-[50%] lg:w-[40%] relative flex justify-center items-center pt-10"
+    >
+      <img
+        src="../../../assets/Images/Logo.png"
+        alt=""
+        height="200px"
+        width="200px"
+      />
+    </div>
+
+    <div class="w-full h-auto bg-[#171720] rounded-md" id="clipp2">
+      <form
+        #From="ngForm"
+        (ngSubmit)="submitFrom(From)"
+        id="formbox"
+        class="p-6 flex flex-col items-center"
+      >
+        <label for="EmailOrFullName" class="text-white"
+          >Email or Full name</label
+        >
+
+      
+
+        <div class="relative">
+          <input
+            (keyup)="usercheck()"
+            [(ngModel)]="username"
+            type="text"
+            name="username"
+            #usernamee="ngModel"
+            class="w-full bg-white p-2 mb-4 rounded-md pl-8"
+          />
+
+          <i
+            *ngIf="usernamee.dirty && show"
+            class="absolute top-3 right-2 fa-regular fa-circle-check"
+            style="color: #21e82f"
+          ></i>
+          <i
+            *ngIf="usernamee.dirty && !show"
+            class="absolute top-5 right-2 fa-regular fa-circle-xmark fa-xs"
+            style="color: #ef0606"
+          ></i>
+        </div>
+
+        <label for="Password" class="text-white">Password</label>
+        
+        <div class="relative">
+          <input
+            (keyup)="usercheck()"
+            [(ngModel)]="password"
+            
+            type="text"
+            name="password"
+            #passwordd="ngModel"
+            class="w-full bg-white p-2 mb-4 rounded-md pl-8"
+          />
+
+          <i
+          *ngIf="usernamee.dirty && showpassword"
+          class="absolute top-3 right-2 fa-regular fa-circle-check"
+          style="color: #21e82f"
+        ></i>
+          <i
+            *ngIf="passwordd.dirty && !showpassword"
+            class="absolute top-5 right-2 fa-regular fa-circle-xmark fa-xs"
+            style="color: #ef0606"
+          ></i>
+        </div>
+
+        <button
+          type="submit" [disabled]="!showpassword"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</body>

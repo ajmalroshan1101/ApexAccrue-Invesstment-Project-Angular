@@ -8,6 +8,7 @@ export class UsertokenService {
 
   constructor() {}
 
+  //settoken is to set the token from the 'token' string
   setToken(token: string) {
     localStorage.setItem('token', token);
     console.log('service token');
@@ -17,6 +18,7 @@ export class UsertokenService {
     console.log(this.tokenkey);
   }
 
+  //This function is to check weather the token is there ro not
   isAuthenticated(): boolean {
     return !!localStorage.getItem('token');
   }
@@ -42,8 +44,8 @@ export class UsertokenService {
     return localStorage.getItem('usertype');
   }
 
+  //This function is to delete the variable stored in localstorage
   removeusertype(): void {
-    localStorage.removeItem('usertype')
+    localStorage.removeItem('usertype');
   }
-  
 }
