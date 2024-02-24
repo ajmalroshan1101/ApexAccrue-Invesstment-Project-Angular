@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OtpComponent } from './shared/otp/otp.component';
+import { OtpComponent } from './modules/shared/components/otp/otp.component';
 import { AuthGuard } from './guards/auth.guard';
-import { HomepageComponent } from './shared/homepage/homepage.component';
+import { HomepageComponent } from './modules/shared/components/homepage/homepage.component';
 
 const CommonRoutes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./modules/Authmodule/authentication.module').then
-      ((m) => m.AuthenticationModule),
+      import('./modules/shared/shared.module').then((m)=>m.SharedModule)
       
   },
   
   {
     path: 'user',
     loadChildren: () =>
-      import('./modules/UserModule/user.module').then((m) => m.UserModule),
+      import('./modules/Users/user.module').then((m) => m.UserModule),
       canActivate:[AuthGuard]
   },
   {
@@ -32,8 +31,8 @@ const CommonRoutes: Routes = [
       import('./modules/AdminModule/admin.module').then((m) => m.AdminModule),
       canActivate:[AuthGuard],
   },
-  { path: 'otp', component: OtpComponent },
-  { path: 'homepage' , component:HomepageComponent}
+  // { path: 'otp', component: OtpComponent },
+  // { path: 'homepage' , component:HomepageComponent}
 ];
 
 @NgModule({

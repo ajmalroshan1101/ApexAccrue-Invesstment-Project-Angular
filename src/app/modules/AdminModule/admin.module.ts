@@ -1,19 +1,32 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminSignupComponent } from 'src/app/AdminSide/admin-signup/admin-signup.component';
-import { AdminLoginComponent } from 'src/app/AdminSide/admin-login/admin-login.component';
-import { AdminRoutingModule } from 'src/app/Routes/AdminRoute/admin-route.module';
-
-
+import { AdminRoutingModule } from 'src/app/modules/AdminModule/admin-route.module';
+import { AdminhomepageComponent } from './components/adminhomepage/adminhomepage.component';
+import { CompanyrequestComponent } from './components/companyrequest/companyrequest.component';
+import { PlanrequestComponent } from './components/planrequest/planrequest.component';
+import { EventuploadComponent } from './components/eventupload/eventupload.component';
+import { RouterModule } from '@angular/router';
+import { AdminheaderComponent } from './components/adminheader/adminheader.component';
+import { CompanylistComponent } from './components/companylist/companylist.component';
+import { AdminService } from './services/admin.service';
 
 @NgModule({
   declarations: [
-    AdminSignupComponent,
-    AdminLoginComponent
+    AdminhomepageComponent,
+    CompanyrequestComponent,
+    PlanrequestComponent,
+    EventuploadComponent,
+    AdminheaderComponent,
+    CompanylistComponent
   ],
-  imports: [
+  imports: [ 
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    RouterModule,
+  
+  ],
+  providers:[
+    AdminService
   ]
 })
-export class AdminModule { }
+export class AdminModule {}

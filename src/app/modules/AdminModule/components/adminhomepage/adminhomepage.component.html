@@ -1,0 +1,21 @@
+<!-- app.component.html -->
+<div class="bg-blue-500 p-4 text-white text-center">
+  <h1 class="text-3xl font-bold">Welcome Admin</h1>
+</div>
+
+<!-- <nav class="bg-gray-800 p-4">
+  <ul class="flex space-x-4 justify-center">
+    <li><a routerLink="/" class="text-white">Welcome</a></li>
+    <li><a routerLink="/admin/company-request" class="text-white">Company Request</a></li>
+    <li><a routerLink="/admin/plan-request" class="text-white">Plan Request</a></li>
+    <li><a routerLink="/admin/event-upload" class="text-white">Event Upload</a></li>
+    <li><a (click)="logout()" class="text-white cursor-pointer">Logout</a></li>
+  </ul>
+</nav> -->
+
+<app-adminheader></app-adminheader>
+
+<div class="container mx-auto p-4">
+  <router-outlet name="adminOutlet"></router-outlet>
+</div>
+

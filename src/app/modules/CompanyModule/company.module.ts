@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CompanyLoginComponent } from 'src/app/CompanySide/company-login/company-login.component';
-import { CompanySignupComponent } from 'src/app/CompanySide/company-signup/company-signup.component';
-import { CompanyRoutingModule } from 'src/app/Routes/CompanyRoute/company-route.module';
+import { CompanyRoutingModule } from 'src/app/modules/CompanyModule/company-route.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [
-
-    CompanySignupComponent,
-    CompanyLoginComponent
+  declarations: [],
+  imports: [
+    CompanyRoutingModule,
+    ReactiveFormsModule,
+    CommonModule,
+    RouterModule,
   ],
-  imports: [CompanyRoutingModule],
   exports: [],
 })
 export class CompanyModule {}

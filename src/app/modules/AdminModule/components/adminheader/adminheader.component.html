@@ -1,0 +1,10 @@
+<!-- app-adminheader.component.html -->
+<nav class="bg-gray-800 p-4">
+  <ul class="flex space-x-4 justify-center">
+    <li><a [routerLink]="[{ outlets: { adminOutlet: ['companylist'] } }]" class="text-white">Company List</a></li>
+    <li><a [routerLink]="[{ outlets: { adminOutlet: ['company-request'] } }]" class="text-white">Company Request</a></li>
+    <li><a [routerLink]="[{ outlets: { adminOutlet: ['plan-request'] } }]" class="text-white">Plan Request</a></li>
+    <li><a [routerLink]="[{ outlets: { adminOutlet: ['event-upload'] } }]" class="text-white">Event Upload</a></li>
+    <li><a (click)="logout()" class="text-white cursor-pointer">Logout</a></li>
+  </ul>
+</nav>

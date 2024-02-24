@@ -9,5 +9,4 @@ export class OtpNumberService {
 
   receivephonenum(phonenumber123: any) {}
 
-  
 }
