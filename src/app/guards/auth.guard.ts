@@ -26,7 +26,6 @@ export class AuthGuard implements CanActivate {
     | UrlTree {
     // Replace this with your actual logic to get the user type
     const userType = this.userToken.getuser();
-    console.log(userType);console.log('authguard');
     
     //This condition is to check the usertype and select the path 
     if (this.userToken.isAuthenticated()) {
@@ -50,12 +49,12 @@ export class AuthGuard implements CanActivate {
           break;
 
         default:
-          this.router.navigate(['/homepage']);
+          this.router.navigate(['/']);
           return false;
       }
     }
 
     // Redirect to homepage for unauthenticated users
-    return this.router.navigate(['/homepage']);
+    return this.router.navigate(['/']);
   }
 }

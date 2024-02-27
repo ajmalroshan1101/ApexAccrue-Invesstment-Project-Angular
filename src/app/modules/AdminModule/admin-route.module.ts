@@ -14,22 +14,22 @@ const routes: Routes = [
       {
         path: 'company-request',
         component: CompanyrequestComponent,
-        outlet: 'adminOutlet',
+        // outlet: 'adminOutlet',
       },
       {
         path: 'plan-request',
         component: PlanrequestComponent,
-        outlet: 'adminOutlet',
+        // outlet: 'adminOutlet',
       },
       {
         path: 'event-upload',
         component: EventuploadComponent,
-        outlet: 'adminOutlet',
+        // outlet: 'adminOutlet',
       },
       {
         path: 'companylist',
         component: CompanylistComponent,
-        outlet: 'adminOutlet',
+        // outlet: 'adminOutlet',
       },
     ],
   },

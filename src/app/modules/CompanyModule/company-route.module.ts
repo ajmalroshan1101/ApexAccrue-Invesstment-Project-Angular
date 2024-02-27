@@ -1,10 +1,19 @@
 import { NgModule } from "@angular/core";
 import { RouterModule,Routes } from "@angular/router";
-
-import { CompanySignupComponent } from "src/app/modules/shared/components/company-signup/company-signup.component";
+import { CompanyhomeComponent } from "./components/companyhome/companyhome.component";
+import { CompanyplansectionComponent } from "./components/companyplansection/companyplansection.component";
 
 const routes:Routes =[
-
+{
+    path:'',
+    component:CompanyhomeComponent,
+    children:[
+        {
+            path:'plansection',
+            component:CompanyplansectionComponent
+        }
+    ]
+},
 
 ]
 

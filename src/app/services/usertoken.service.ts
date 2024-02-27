@@ -11,11 +11,8 @@ export class UsertokenService {
   //settoken is to set the token from the 'token' string
   setToken(token: string) {
     localStorage.setItem('token', token);
-    console.log('service token');
 
     this.tokenkey = token;
-
-    console.log(this.tokenkey);
   }
 
   //This function is to check weather the token is there ro not
@@ -33,9 +30,6 @@ export class UsertokenService {
 
   //This function is for store the user type while the user enter into the homepage
   storeuser(type: string) {
-    console.log(type);
-    console.log('type of token userrrrr');
-
     localStorage.setItem('usertype', type);
   }
 

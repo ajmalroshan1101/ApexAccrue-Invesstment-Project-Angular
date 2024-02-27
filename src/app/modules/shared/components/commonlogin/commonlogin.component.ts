@@ -28,19 +28,19 @@ export class CommonloginComponent implements OnInit {
   ngOnInit(): void {}
 
   submitFrom(from: NgForm) {
-    console.log(from.value);
 
     this.userserive.loginpost(from.value).subscribe({
       next: (data) => {
-        console.log(data);
 
         this.usertoken.setToken(data.token);
         this.usertoken.storeuser(data.user);
-
+        
         if (data.user === 'user') {
           this.router.navigate(['/user/userhome']);
         }else if(data.user === 'admin'){
           this.router.navigate(['/admin/adminhome']);
+        }else if(data.user === 'company'){
+          this.router.navigate(['/company']);
         }
       },
       error: (err) => {
