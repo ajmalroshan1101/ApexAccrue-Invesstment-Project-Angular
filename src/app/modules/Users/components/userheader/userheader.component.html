@@ -1,0 +1,27 @@
+<!-- navbar.component.html -->
+<nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-white text-xl font-bold">Your Logo</div>
+  
+      <div class="hidden md:flex space-x-4 ">
+        <a routerLink="/dashboard" routerLinkActive="text-yellow-500">Dashboard</a>
+        <a routerLink="/plans" routerLinkActive="text-yellow-500">Plans</a>
+        <a routerLink="/events" routerLinkActive="text-yellow-500">Events</a>
+        <a routerLink="/logout" routerLinkActive="text-yellow-500">Logout</a>
+      </div>
+  
+      <!-- Mobile Menu Toggle Button -->
+      <button class="md:hidden text-white text-2xl" (click)="toggleMenu()">
+        ☰
+      </button>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div *ngIf="mobileMenuOpen" class="flex flex-col items-center md:hidden text-white mt-4">
+      <a routerLink="/dashboard" routerLinkActive="text-yellow-500" (click)="toggleMenu()">Dashboard</a>
+      <a routerLink="/plans" routerLinkActive="text-yellow-500" (click)="toggleMenu()">Plans</a>
+      <a routerLink="/events" routerLinkActive="text-yellow-500" (click)="toggleMenu()">Events</a>
+      <a routerLink="/logout" routerLinkActive="text-yellow-500" (click)="toggleMenu()">Logout</a>
+    </div>
+  </nav>
+  

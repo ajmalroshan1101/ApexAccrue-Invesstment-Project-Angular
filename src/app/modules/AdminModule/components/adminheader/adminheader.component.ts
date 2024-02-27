@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsertokenService } from 'src/app/services/usertoken.service';
 
 @Component({
   selector: 'app-adminheader',
   templateUrl: './adminheader.component.html',
-  styleUrls: ['./adminheader.component.css']
+  styleUrls: ['./adminheader.component.css'],
 })
 export class AdminheaderComponent {
+  constructor(private tokenserivce: UsertokenService, private router: Router) {}
 
-  constructor(private tokenserivce : UsertokenService){}
-
-  logout(){
-    
+  logout() {
     this.tokenserivce.removeToken();
-    console.log('hello');
-    
+
+    this.router.navigate(['/']);
   }
-  
 }

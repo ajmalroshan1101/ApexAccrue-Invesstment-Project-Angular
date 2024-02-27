@@ -30,7 +30,6 @@ export class OtpComponent implements OnInit {
 
   ngOnInit(): void {
     this.OtpNumberService.phonenumbers$.subscribe((number) => {
-      console.log('number', number);
       this.PhoneNumber = number;
     });
   }
@@ -57,27 +56,21 @@ export class OtpComponent implements OnInit {
       this.otp1val5 +
       this.otp1val6;
 
-    console.log(this.PhoneNumber);
-
     const otpnum = parseInt(otp);
 
     this.UserService.OTPVerification(otpnum, this.PhoneNumber).subscribe({
       next: (data) => {
-        console.log(data);
-
         if (data.otpCheck && data.token) {
 
           this.usertoken.setToken(data.token);
 
           this.usertoken.storeuser(data.userType)
-
-          console.log(this.usertoken.getuser());
           
           this.router.navigate(['/user/userhome']);
 
         } else {
 
-          console.log('hello bhaya');
+          this.router.navigate(['/usersignup']);
         }
 
         //  if(data.otpCheck){

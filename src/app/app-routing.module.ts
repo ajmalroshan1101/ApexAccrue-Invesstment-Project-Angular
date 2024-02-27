@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { OtpComponent } from './modules/shared/components/otp/otp.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomepageComponent } from './modules/shared/components/homepage/homepage.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 const CommonRoutes: Routes = [
   {
@@ -31,8 +32,8 @@ const CommonRoutes: Routes = [
       import('./modules/AdminModule/admin.module').then((m) => m.AdminModule),
       canActivate:[AuthGuard],
   },
-  // { path: 'otp', component: OtpComponent },
-  // { path: 'homepage' , component:HomepageComponent}
+  { path: '**', component: NotfoundComponent},
+
 ];
 
 @NgModule({

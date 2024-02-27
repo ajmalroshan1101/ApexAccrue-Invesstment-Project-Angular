@@ -1,4 +1,4 @@
-<!-- company-list.component.html -->
+<!-- company-list.component.html
 
 <div class="bg-gray-200 p-4 mb-4">
   <table class="min-w-full bg-white border border-gray-300">
@@ -34,4 +34,70 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
+
+<!-- company-list.component.html -->
+
+<!-- company-list.component.html -->
+
+<div class="bg-gray-200 p-4 mb-4 overflow-x-auto">
+    <table class="min-w-full bg-white border border-gray-300">
+      <thead>
+        <tr>
+          <th class="py-2 px-4 border-b">Company Name</th>
+          <th class="py-2 px-4 border-b">Owner</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">Address</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">City</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">State</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">Zipcode</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">Country</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">Email</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">Phone Number</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">Nominal Capital</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">Industry</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">Website</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">Description</th>
+          <th class="py-2 px-4 border-b hidden md:table-cell">Verification</th>
+          <th class="py-2 px-4 border-b">Status</th>
+          <th class="py-2 px-4 border-b">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let company of companies">
+          <td class="py-2 px-4 border">{{ company.companyName }}</td>
+          <td class="py-2 px-4 border">{{ company.owner }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.streetAddress }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.city }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.state }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.zipcode }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.country }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.email }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.phoneNumber }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.nominalCapital }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.industry }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.website }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.companyDescription }}</td>
+          <td class="py-2 px-4 border hidden md:table-cell">{{ company.verification }}</td>
+          <td class="py-2 px-4 border">{{ company.approvel }}</td>
+          <td class="py-2 px-4 border flex flex-col md:flex-row justify-evenly">
+            <button
+              *ngIf="company.approvel === 'pending'"
+              class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded mb-2 md:mb-0"
+              (click)="approve(company._id)"
+            >
+              Approve
+            </button>
+            <button
+              *ngIf="company.approvel === 'pending'"
+              class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded"
+              (click)="reject(company._id)"
+            >
+              Reject
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  

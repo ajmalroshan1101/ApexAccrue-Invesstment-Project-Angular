@@ -15,10 +15,16 @@ export class AdminService {
   approveCompany(companyId: string): Observable<any> {
     console.log(companyId);
     
-    return this.HTTP.post<any>(`${this.baseUrl}/company/approveCompany`, { companyId });
+    return this.HTTP.post<any>(`${this.baseUrl}/admin/approveCompany`, { companyId });
   }
 
   rejectCompany(companyId: string): Observable<any> {
-    return this.HTTP.post<any>(`${this.baseUrl}/company/rejectCompany`, { companyId });
+    return this.HTTP.post<any>(`${this.baseUrl}/admin/rejectCompany`, { companyId });
+  }
+
+  getcompanylist():Observable <any[]>{
+    return this.HTTP.get<any[]>(`${this.baseUrl}/company/companylist`);
   }
 }
+
+

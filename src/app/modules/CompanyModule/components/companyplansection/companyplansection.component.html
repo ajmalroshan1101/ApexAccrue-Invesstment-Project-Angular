@@ -1,0 +1,50 @@
+
+
+   <form [formGroup]="FMbuilder" (ngSubmit)="onSubmit()" enctype="multipart/form-data" class="max-w-md mx-auto mt-8 p-4 bg-gradient-to-r from-teal-400 to-blue-500 rounded shadow-md">
+    <div class="mb-4">
+      <label class="block text-white text-sm font-bold mb-2" for="title">Title:</label>
+      <input type="text" id="title" formControlName="title" class="w-full p-2 bg-white border rounded">
+    </div>
+  
+    <div class="mb-4">
+      <label class="block text-white text-sm font-bold mb-2" for="description">Description:</label>
+      <textarea id="description" formControlName="description" class="w-full p-2 bg-white border rounded"></textarea>
+    </div>
+  
+    <div class="mb-4">
+      <label class="block text-white text-sm font-bold mb-2">Amount Type:</label>
+      <div class="flex">
+        <div class="mr-4">
+          <input type="radio" id="fixedAmount" formControlName="amountType" value="fixed">
+          <label class="text-white ml-2" for="fixedAmount">Fixed Amount</label>
+        </div>
+        <div>
+          <input type="radio" id="minAmount" formControlName="amountType" value="min">
+          <label class="text-white ml-2" for="minAmount">Minimum Amount</label>
+        </div>
+      </div>
+    </div>
+  
+    <div class="mb-4">
+      <label class="block text-white text-sm font-bold mb-2" for="amount">Amount:</label>
+      <input type="number" id="amount" formControlName="amount" class="w-full p-2 bg-white border rounded">
+    </div>
+  
+    <div class="mb-4">
+      <label class="block text-white text-sm font-bold mb-2" for="returnPercentage">Return Percentage:</label>
+      <input type="number" id="returnPercentage" formControlName="returnPercentage" class="w-full p-2 bg-white border rounded">
+    </div>
+  
+    <div class="mb-4">
+      <label class="block text-white text-sm font-bold mb-2" for="timePeriod">Time Period (months):</label>
+      <input type="number" id="timePeriod" formControlName="timePeriod" class="w-full p-2 bg-white border rounded">
+    </div>
+  
+    <div class="mb-4">
+      <label class="block text-white text-sm font-bold mb-2" for="file">Image Upload:</label>
+      <input type="file" id="file" formControlName="file" (change)="onFileChange($event)" accept="file/*" class="w-full p-2 bg-white border rounded">
+    </div>
+  
+    <button [disabled]="FMbuilder.invalid" type="submit" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Submit</button>
+  </form>
+  

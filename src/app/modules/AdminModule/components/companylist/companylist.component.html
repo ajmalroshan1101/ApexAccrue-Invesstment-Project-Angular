@@ -1,1 +1,58 @@
-<p>companylist works!</p>
+<!-- company-list.component.html -->
+
+<div class="bg-gray-200 p-4 mb-4 overflow-x-auto">
+    <table class="min-w-full bg-white border border-gray-300">
+      <thead>
+        <tr>
+          <th class="py-2 px-4 border-b">Company Name</th>
+          <th class="py-2 px-4 border-b">Owner</th>
+          <th class="py-2 px-4 border-b">Address</th>
+          <th class="py-2 px-4 border-b">City</th>
+          <th class="py-2 px-4 border-b">State</th>
+          <th class="py-2 px-4 border-b">Zipcode</th>
+          <th class="py-2 px-4 border-b">Country</th>
+          <th class="py-2 px-4 border-b">Email</th>
+          <th class="py-2 px-4 border-b">Phone Number</th>
+          <th class="py-2 px-4 border-b">Nominal Capital</th>
+          <th class="py-2 px-4 border-b">Industry</th>
+          <th class="py-2 px-4 border-b">Website</th>
+          <th class="py-2 px-4 border-b">Description</th>
+          <th class="py-2 px-4 border-b">Verification</th>
+          <th class="py-2 px-4 border-b">Status</th>
+          <th class="py-2 px-4 border-b">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let company of companylist">
+          <tr class="border-b">
+            <td class="py-2 px-4">{{ company.companyName }}</td>
+            <td class="py-2 px-4">{{ company.owner }}</td>
+            <td class="py-2 px-4">{{ company.streetAddress }}</td>
+            <td class="py-2 px-4">{{ company.city }}</td>
+            <td class="py-2 px-4">{{ company.state }}</td>
+            <td class="py-2 px-4">{{ company.zipcode }}</td>
+            <td class="py-2 px-4">{{ company.country }}</td>
+            <td class="py-2 px-4">{{ company.email }}</td>
+            <td class="py-2 px-4">{{ company.phoneNumber }}</td>
+            <td class="py-2 px-4">{{ company.nominalCapital }}</td>
+            <td class="py-2 px-4">{{ company.industry }}</td>
+            <td class="py-2 px-4">{{ company.website }}</td>
+            <td class="py-2 px-4">{{ company.companyDescription }}</td>
+            <td class="py-2 px-4">{{ company.verification }}</td>
+            <td class="py-2 px-4">{{ company.approvel }}</td>
+            <td class="py-2 px-4 flex flex-col md:flex-row justify-evenly">
+              <button
+                
+                class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded mb-2 md:mb-0"
+                (click)="suspend(company._id)"
+              >
+                Suspend
+              </button>
+            </td>
+          </tr>
+        
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  

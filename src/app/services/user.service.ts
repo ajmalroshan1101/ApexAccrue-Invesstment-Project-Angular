@@ -18,7 +18,6 @@ export class UserService {
 
   //This request is to send the signup data(detalis) to backend
   SignupPost(PostData: SignupPost): Observable<any> {
-
     return this.Http.post<SignupPost>(`${this.baseUrl}/User/Signup`, PostData);
   }
 

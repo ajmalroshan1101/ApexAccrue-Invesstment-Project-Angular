@@ -7,13 +7,13 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { CompanySignupComponent } from './components/company-signup/company-signup.component';
 
 const routes: Routes = [
+  {path:'',component:HomepageComponent},
   {
     path: 'usersignup',
     component: UserSignupComponent,
   },
   { path: 'otp', component: OtpComponent },
   { path: 'userlogin', component: CommonloginComponent },   
-  {path:'homepage',component:HomepageComponent},
   {path:'csignup',component:CompanySignupComponent}
 
 ];
